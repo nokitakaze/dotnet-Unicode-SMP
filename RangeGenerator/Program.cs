@@ -39,10 +39,10 @@ namespace RangeGenerator
                     var lastIndex = int.Parse(m.Groups[3].Value, NumberStyles.HexNumber);
 
                     return string.Format(
-                        "        public static UnicodeRange {0} =>\n" +
+                        "        public static UnicodeRangeExtended {0} =>\n" +
                         "            {0}_Ref ?? CreateRange(ref {0}_Ref, 0x{1:x6}, 0x{2:x6});\n" +
                         "\n" +
-                        "        private static UnicodeRange? {0}_Ref;",
+                        "        private static UnicodeRangeExtended? {0}_Ref;",
                         name,
                         firstIndex,
                         lastIndex
@@ -52,7 +52,6 @@ namespace RangeGenerator
                 .Aggregate((a, b) => a + "\n\n" + b);
 
             var fullText =
-                "using System.Text.Unicode;\n\n" +
                 "namespace UnicodeSMP\n" +
                 "{\n" +
                 "   public static partial class UnicodeRanges\n" +
