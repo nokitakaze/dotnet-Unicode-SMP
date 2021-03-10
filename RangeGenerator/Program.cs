@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -10,21 +11,42 @@ namespace RangeGenerator
     {
         private static readonly Regex GoodLine = new("(.+?)\\s+\\(([0-9a-fA-F]+)[–-]([0-9a-fA-F]+)\\)");
 
+        private static readonly IReadOnlyCollection<string> GeneralPlanes = new[]
+        {
+            "Basic Multilingual Plane",
+            "Supplementary Multilingual Plane",
+            "Supplementary Ideographic Plane",
+            "Tertiary Ideographic Plane",
+            "unassigned",
+            "unassigned",
+            "unassigned",
+            "unassigned",
+            "unassigned",
+            "unassigned",
+            "unassigned",
+            "unassigned",
+            "unassigned",
+            "unassigned",
+            "Supplementary Special-purpose Plane",
+            "Supplementary Private Use Area planes",
+        };
+
         private static async Task Main()
         {
             var list = await File.ReadAllLinesAsync("wikipedia-list.txt");
-            var fullTextInner = list
+            var ranges = list
                 .Select(t =>
                 {
                     var m = GoodLine.Match(t);
                     if (!m.Success)
                     {
-                        return null;
+                        return (-1, null);
                     }
 
                     var name = m
                         .Groups[1]
                         .Value
+                        .Replace("\'", "")
                         .Replace("-", "_")
                         .Split(' ')
                         .Select(nm =>
@@ -40,7 +62,7 @@ namespace RangeGenerator
                     var lastIndex = int.Parse(m.Groups[3].Value, NumberStyles.HexNumber);
                     var lastIndexS = lastIndex.ToString("x6");
 
-                    return string.Format(
+                    return (firstIndex, text: string.Format(
                         "        public static UnicodeRangeExtended {0} =>\n" +
                         "            {0}_Ref ?? CreateRange(ref {0}_Ref, 0x{1}_{2}, 0x{3}_{4});\n" +
                         "\n" +
@@ -50,19 +72,36 @@ namespace RangeGenerator
                         firstIndexS.Substring(2),
                         lastIndexS.Substring(0, 2),
                         lastIndexS.Substring(2)
-                    );
+                    ));
                 })
-                .Where(x => x != null)
+                .Where(x => x.firstIndex != -1)
+                .ToArray();
+
+            var fullTextInner = ranges
+                .GroupBy(t => t.firstIndex / 0x1_0000)
+                .Select(plane =>
+                {
+                    var planeId = plane.Key;
+                    var regionName = GeneralPlanes.Skip(planeId).First();
+                    var planeTextInner = plane
+                        .OrderBy(t => t.firstIndex)
+                        .Select(t => t.text)
+                        .Aggregate((a, b) => a + "\n\n" + b);
+
+                    return "        #region " + regionName + "\n\n" +
+                           planeTextInner + "\n\n" +
+                           "        #endregion";
+                })
                 .Aggregate((a, b) => a + "\n\n" + b);
 
             var fullText =
                 "namespace UnicodeSMP\n" +
                 "{\n" +
-                "   public static partial class UnicodeRanges\n" +
-                "   {\n" +
+                "    public static partial class UnicodeRanges\n" +
+                "    {\n" +
                 fullTextInner +
                 "\n" +
-                "   }\n" +
+                "    }\n" +
                 "}";
 
             await File.WriteAllTextAsync("UnicodeRanges.cs", fullText);

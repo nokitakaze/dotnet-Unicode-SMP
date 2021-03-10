@@ -1,7 +1,828 @@
 namespace UnicodeSMP
 {
-   public static partial class UnicodeRanges
-   {
+    public static partial class UnicodeRanges
+    {
+        #region Basic Multilingual Plane
+
+        public static UnicodeRangeExtended BasicLatin =>
+            BasicLatin_Ref ?? CreateRange(ref BasicLatin_Ref, 0x00_0000, 0x00_007f);
+
+        private static UnicodeRangeExtended? BasicLatin_Ref;
+
+        public static UnicodeRangeExtended Latin_1Supplement =>
+            Latin_1Supplement_Ref ?? CreateRange(ref Latin_1Supplement_Ref, 0x00_0080, 0x00_00ff);
+
+        private static UnicodeRangeExtended? Latin_1Supplement_Ref;
+
+        public static UnicodeRangeExtended LatinExtended_a =>
+            LatinExtended_a_Ref ?? CreateRange(ref LatinExtended_a_Ref, 0x00_0100, 0x00_017f);
+
+        private static UnicodeRangeExtended? LatinExtended_a_Ref;
+
+        public static UnicodeRangeExtended LatinExtended_b =>
+            LatinExtended_b_Ref ?? CreateRange(ref LatinExtended_b_Ref, 0x00_0180, 0x00_024f);
+
+        private static UnicodeRangeExtended? LatinExtended_b_Ref;
+
+        public static UnicodeRangeExtended IpaExtensions =>
+            IpaExtensions_Ref ?? CreateRange(ref IpaExtensions_Ref, 0x00_0250, 0x00_02af);
+
+        private static UnicodeRangeExtended? IpaExtensions_Ref;
+
+        public static UnicodeRangeExtended SpacingModifierLetters =>
+            SpacingModifierLetters_Ref ?? CreateRange(ref SpacingModifierLetters_Ref, 0x00_02b0, 0x00_02ff);
+
+        private static UnicodeRangeExtended? SpacingModifierLetters_Ref;
+
+        public static UnicodeRangeExtended CombiningDiacriticalMarks =>
+            CombiningDiacriticalMarks_Ref ?? CreateRange(ref CombiningDiacriticalMarks_Ref, 0x00_0300, 0x00_036f);
+
+        private static UnicodeRangeExtended? CombiningDiacriticalMarks_Ref;
+
+        public static UnicodeRangeExtended GreekAndCoptic =>
+            GreekAndCoptic_Ref ?? CreateRange(ref GreekAndCoptic_Ref, 0x00_0370, 0x00_03ff);
+
+        private static UnicodeRangeExtended? GreekAndCoptic_Ref;
+
+        public static UnicodeRangeExtended Cyrillic =>
+            Cyrillic_Ref ?? CreateRange(ref Cyrillic_Ref, 0x00_0400, 0x00_04ff);
+
+        private static UnicodeRangeExtended? Cyrillic_Ref;
+
+        public static UnicodeRangeExtended CyrillicSupplement =>
+            CyrillicSupplement_Ref ?? CreateRange(ref CyrillicSupplement_Ref, 0x00_0500, 0x00_052f);
+
+        private static UnicodeRangeExtended? CyrillicSupplement_Ref;
+
+        public static UnicodeRangeExtended Armenian =>
+            Armenian_Ref ?? CreateRange(ref Armenian_Ref, 0x00_0530, 0x00_058f);
+
+        private static UnicodeRangeExtended? Armenian_Ref;
+
+        public static UnicodeRangeExtended Hebrew =>
+            Hebrew_Ref ?? CreateRange(ref Hebrew_Ref, 0x00_0590, 0x00_05ff);
+
+        private static UnicodeRangeExtended? Hebrew_Ref;
+
+        public static UnicodeRangeExtended Arabic =>
+            Arabic_Ref ?? CreateRange(ref Arabic_Ref, 0x00_0600, 0x00_06ff);
+
+        private static UnicodeRangeExtended? Arabic_Ref;
+
+        public static UnicodeRangeExtended Syriac =>
+            Syriac_Ref ?? CreateRange(ref Syriac_Ref, 0x00_0700, 0x00_074f);
+
+        private static UnicodeRangeExtended? Syriac_Ref;
+
+        public static UnicodeRangeExtended ArabicSupplement =>
+            ArabicSupplement_Ref ?? CreateRange(ref ArabicSupplement_Ref, 0x00_0750, 0x00_077f);
+
+        private static UnicodeRangeExtended? ArabicSupplement_Ref;
+
+        public static UnicodeRangeExtended Thaana =>
+            Thaana_Ref ?? CreateRange(ref Thaana_Ref, 0x00_0780, 0x00_07bf);
+
+        private static UnicodeRangeExtended? Thaana_Ref;
+
+        public static UnicodeRangeExtended Nko =>
+            Nko_Ref ?? CreateRange(ref Nko_Ref, 0x00_07c0, 0x00_07ff);
+
+        private static UnicodeRangeExtended? Nko_Ref;
+
+        public static UnicodeRangeExtended Samaritan =>
+            Samaritan_Ref ?? CreateRange(ref Samaritan_Ref, 0x00_0800, 0x00_083f);
+
+        private static UnicodeRangeExtended? Samaritan_Ref;
+
+        public static UnicodeRangeExtended Mandaic =>
+            Mandaic_Ref ?? CreateRange(ref Mandaic_Ref, 0x00_0840, 0x00_085f);
+
+        private static UnicodeRangeExtended? Mandaic_Ref;
+
+        public static UnicodeRangeExtended SyriacSupplement =>
+            SyriacSupplement_Ref ?? CreateRange(ref SyriacSupplement_Ref, 0x00_0860, 0x00_086f);
+
+        private static UnicodeRangeExtended? SyriacSupplement_Ref;
+
+        public static UnicodeRangeExtended ArabicExtended_a =>
+            ArabicExtended_a_Ref ?? CreateRange(ref ArabicExtended_a_Ref, 0x00_08a0, 0x00_08ff);
+
+        private static UnicodeRangeExtended? ArabicExtended_a_Ref;
+
+        public static UnicodeRangeExtended Devanagari =>
+            Devanagari_Ref ?? CreateRange(ref Devanagari_Ref, 0x00_0900, 0x00_097f);
+
+        private static UnicodeRangeExtended? Devanagari_Ref;
+
+        public static UnicodeRangeExtended Bengali =>
+            Bengali_Ref ?? CreateRange(ref Bengali_Ref, 0x00_0980, 0x00_09ff);
+
+        private static UnicodeRangeExtended? Bengali_Ref;
+
+        public static UnicodeRangeExtended Gurmukhi =>
+            Gurmukhi_Ref ?? CreateRange(ref Gurmukhi_Ref, 0x00_0a00, 0x00_0a7f);
+
+        private static UnicodeRangeExtended? Gurmukhi_Ref;
+
+        public static UnicodeRangeExtended Gujarati =>
+            Gujarati_Ref ?? CreateRange(ref Gujarati_Ref, 0x00_0a80, 0x00_0aff);
+
+        private static UnicodeRangeExtended? Gujarati_Ref;
+
+        public static UnicodeRangeExtended Oriya =>
+            Oriya_Ref ?? CreateRange(ref Oriya_Ref, 0x00_0b00, 0x00_0b7f);
+
+        private static UnicodeRangeExtended? Oriya_Ref;
+
+        public static UnicodeRangeExtended Tamil =>
+            Tamil_Ref ?? CreateRange(ref Tamil_Ref, 0x00_0b80, 0x00_0bff);
+
+        private static UnicodeRangeExtended? Tamil_Ref;
+
+        public static UnicodeRangeExtended Telugu =>
+            Telugu_Ref ?? CreateRange(ref Telugu_Ref, 0x00_0c00, 0x00_0c7f);
+
+        private static UnicodeRangeExtended? Telugu_Ref;
+
+        public static UnicodeRangeExtended Kannada =>
+            Kannada_Ref ?? CreateRange(ref Kannada_Ref, 0x00_0c80, 0x00_0cff);
+
+        private static UnicodeRangeExtended? Kannada_Ref;
+
+        public static UnicodeRangeExtended Malayalam =>
+            Malayalam_Ref ?? CreateRange(ref Malayalam_Ref, 0x00_0d00, 0x00_0d7f);
+
+        private static UnicodeRangeExtended? Malayalam_Ref;
+
+        public static UnicodeRangeExtended Sinhala =>
+            Sinhala_Ref ?? CreateRange(ref Sinhala_Ref, 0x00_0d80, 0x00_0dff);
+
+        private static UnicodeRangeExtended? Sinhala_Ref;
+
+        public static UnicodeRangeExtended Thai =>
+            Thai_Ref ?? CreateRange(ref Thai_Ref, 0x00_0e00, 0x00_0e7f);
+
+        private static UnicodeRangeExtended? Thai_Ref;
+
+        public static UnicodeRangeExtended Lao =>
+            Lao_Ref ?? CreateRange(ref Lao_Ref, 0x00_0e80, 0x00_0eff);
+
+        private static UnicodeRangeExtended? Lao_Ref;
+
+        public static UnicodeRangeExtended Tibetan =>
+            Tibetan_Ref ?? CreateRange(ref Tibetan_Ref, 0x00_0f00, 0x00_0fff);
+
+        private static UnicodeRangeExtended? Tibetan_Ref;
+
+        public static UnicodeRangeExtended Myanmar =>
+            Myanmar_Ref ?? CreateRange(ref Myanmar_Ref, 0x00_1000, 0x00_109f);
+
+        private static UnicodeRangeExtended? Myanmar_Ref;
+
+        public static UnicodeRangeExtended Georgian =>
+            Georgian_Ref ?? CreateRange(ref Georgian_Ref, 0x00_10a0, 0x00_10ff);
+
+        private static UnicodeRangeExtended? Georgian_Ref;
+
+        public static UnicodeRangeExtended HangulJamo =>
+            HangulJamo_Ref ?? CreateRange(ref HangulJamo_Ref, 0x00_1100, 0x00_11ff);
+
+        private static UnicodeRangeExtended? HangulJamo_Ref;
+
+        public static UnicodeRangeExtended Ethiopic =>
+            Ethiopic_Ref ?? CreateRange(ref Ethiopic_Ref, 0x00_1200, 0x00_137f);
+
+        private static UnicodeRangeExtended? Ethiopic_Ref;
+
+        public static UnicodeRangeExtended EthiopicSupplement =>
+            EthiopicSupplement_Ref ?? CreateRange(ref EthiopicSupplement_Ref, 0x00_1380, 0x00_139f);
+
+        private static UnicodeRangeExtended? EthiopicSupplement_Ref;
+
+        public static UnicodeRangeExtended Cherokee =>
+            Cherokee_Ref ?? CreateRange(ref Cherokee_Ref, 0x00_13a0, 0x00_13ff);
+
+        private static UnicodeRangeExtended? Cherokee_Ref;
+
+        public static UnicodeRangeExtended UnifiedCanadianAboriginalSyllabics =>
+            UnifiedCanadianAboriginalSyllabics_Ref ?? CreateRange(ref UnifiedCanadianAboriginalSyllabics_Ref, 0x00_1400, 0x00_167f);
+
+        private static UnicodeRangeExtended? UnifiedCanadianAboriginalSyllabics_Ref;
+
+        public static UnicodeRangeExtended Ogham =>
+            Ogham_Ref ?? CreateRange(ref Ogham_Ref, 0x00_1680, 0x00_169f);
+
+        private static UnicodeRangeExtended? Ogham_Ref;
+
+        public static UnicodeRangeExtended Runic =>
+            Runic_Ref ?? CreateRange(ref Runic_Ref, 0x00_16a0, 0x00_16ff);
+
+        private static UnicodeRangeExtended? Runic_Ref;
+
+        public static UnicodeRangeExtended Tagalog =>
+            Tagalog_Ref ?? CreateRange(ref Tagalog_Ref, 0x00_1700, 0x00_171f);
+
+        private static UnicodeRangeExtended? Tagalog_Ref;
+
+        public static UnicodeRangeExtended Hanunoo =>
+            Hanunoo_Ref ?? CreateRange(ref Hanunoo_Ref, 0x00_1720, 0x00_173f);
+
+        private static UnicodeRangeExtended? Hanunoo_Ref;
+
+        public static UnicodeRangeExtended Buhid =>
+            Buhid_Ref ?? CreateRange(ref Buhid_Ref, 0x00_1740, 0x00_175f);
+
+        private static UnicodeRangeExtended? Buhid_Ref;
+
+        public static UnicodeRangeExtended Tagbanwa =>
+            Tagbanwa_Ref ?? CreateRange(ref Tagbanwa_Ref, 0x00_1760, 0x00_177f);
+
+        private static UnicodeRangeExtended? Tagbanwa_Ref;
+
+        public static UnicodeRangeExtended Khmer =>
+            Khmer_Ref ?? CreateRange(ref Khmer_Ref, 0x00_1780, 0x00_17ff);
+
+        private static UnicodeRangeExtended? Khmer_Ref;
+
+        public static UnicodeRangeExtended Mongolian =>
+            Mongolian_Ref ?? CreateRange(ref Mongolian_Ref, 0x00_1800, 0x00_18af);
+
+        private static UnicodeRangeExtended? Mongolian_Ref;
+
+        public static UnicodeRangeExtended UnifiedCanadianAboriginalSyllabicsExtended =>
+            UnifiedCanadianAboriginalSyllabicsExtended_Ref ?? CreateRange(ref UnifiedCanadianAboriginalSyllabicsExtended_Ref, 0x00_18b0, 0x00_18ff);
+
+        private static UnicodeRangeExtended? UnifiedCanadianAboriginalSyllabicsExtended_Ref;
+
+        public static UnicodeRangeExtended Limbu =>
+            Limbu_Ref ?? CreateRange(ref Limbu_Ref, 0x00_1900, 0x00_194f);
+
+        private static UnicodeRangeExtended? Limbu_Ref;
+
+        public static UnicodeRangeExtended TaiLe =>
+            TaiLe_Ref ?? CreateRange(ref TaiLe_Ref, 0x00_1950, 0x00_197f);
+
+        private static UnicodeRangeExtended? TaiLe_Ref;
+
+        public static UnicodeRangeExtended NewTaiLue =>
+            NewTaiLue_Ref ?? CreateRange(ref NewTaiLue_Ref, 0x00_1980, 0x00_19df);
+
+        private static UnicodeRangeExtended? NewTaiLue_Ref;
+
+        public static UnicodeRangeExtended KhmerSymbols =>
+            KhmerSymbols_Ref ?? CreateRange(ref KhmerSymbols_Ref, 0x00_19e0, 0x00_19ff);
+
+        private static UnicodeRangeExtended? KhmerSymbols_Ref;
+
+        public static UnicodeRangeExtended Buginese =>
+            Buginese_Ref ?? CreateRange(ref Buginese_Ref, 0x00_1a00, 0x00_1a1f);
+
+        private static UnicodeRangeExtended? Buginese_Ref;
+
+        public static UnicodeRangeExtended TaiTham =>
+            TaiTham_Ref ?? CreateRange(ref TaiTham_Ref, 0x00_1a20, 0x00_1aaf);
+
+        private static UnicodeRangeExtended? TaiTham_Ref;
+
+        public static UnicodeRangeExtended CombiningDiacriticalMarksExtended =>
+            CombiningDiacriticalMarksExtended_Ref ?? CreateRange(ref CombiningDiacriticalMarksExtended_Ref, 0x00_1ab0, 0x00_1aff);
+
+        private static UnicodeRangeExtended? CombiningDiacriticalMarksExtended_Ref;
+
+        public static UnicodeRangeExtended Balinese =>
+            Balinese_Ref ?? CreateRange(ref Balinese_Ref, 0x00_1b00, 0x00_1b7f);
+
+        private static UnicodeRangeExtended? Balinese_Ref;
+
+        public static UnicodeRangeExtended Sundanese =>
+            Sundanese_Ref ?? CreateRange(ref Sundanese_Ref, 0x00_1b80, 0x00_1bbf);
+
+        private static UnicodeRangeExtended? Sundanese_Ref;
+
+        public static UnicodeRangeExtended Batak =>
+            Batak_Ref ?? CreateRange(ref Batak_Ref, 0x00_1bc0, 0x00_1bff);
+
+        private static UnicodeRangeExtended? Batak_Ref;
+
+        public static UnicodeRangeExtended Lepcha =>
+            Lepcha_Ref ?? CreateRange(ref Lepcha_Ref, 0x00_1c00, 0x00_1c4f);
+
+        private static UnicodeRangeExtended? Lepcha_Ref;
+
+        public static UnicodeRangeExtended OlChiki =>
+            OlChiki_Ref ?? CreateRange(ref OlChiki_Ref, 0x00_1c50, 0x00_1c7f);
+
+        private static UnicodeRangeExtended? OlChiki_Ref;
+
+        public static UnicodeRangeExtended CyrillicExtended_c =>
+            CyrillicExtended_c_Ref ?? CreateRange(ref CyrillicExtended_c_Ref, 0x00_1c80, 0x00_1c8f);
+
+        private static UnicodeRangeExtended? CyrillicExtended_c_Ref;
+
+        public static UnicodeRangeExtended GeorgianExtended =>
+            GeorgianExtended_Ref ?? CreateRange(ref GeorgianExtended_Ref, 0x00_1c90, 0x00_1cbf);
+
+        private static UnicodeRangeExtended? GeorgianExtended_Ref;
+
+        public static UnicodeRangeExtended SundaneseSupplement =>
+            SundaneseSupplement_Ref ?? CreateRange(ref SundaneseSupplement_Ref, 0x00_1cc0, 0x00_1ccf);
+
+        private static UnicodeRangeExtended? SundaneseSupplement_Ref;
+
+        public static UnicodeRangeExtended VedicExtensions =>
+            VedicExtensions_Ref ?? CreateRange(ref VedicExtensions_Ref, 0x00_1cd0, 0x00_1cff);
+
+        private static UnicodeRangeExtended? VedicExtensions_Ref;
+
+        public static UnicodeRangeExtended PhoneticExtensions =>
+            PhoneticExtensions_Ref ?? CreateRange(ref PhoneticExtensions_Ref, 0x00_1d00, 0x00_1d7f);
+
+        private static UnicodeRangeExtended? PhoneticExtensions_Ref;
+
+        public static UnicodeRangeExtended PhoneticExtensionsSupplement =>
+            PhoneticExtensionsSupplement_Ref ?? CreateRange(ref PhoneticExtensionsSupplement_Ref, 0x00_1d80, 0x00_1dbf);
+
+        private static UnicodeRangeExtended? PhoneticExtensionsSupplement_Ref;
+
+        public static UnicodeRangeExtended CombiningDiacriticalMarksSupplement =>
+            CombiningDiacriticalMarksSupplement_Ref ?? CreateRange(ref CombiningDiacriticalMarksSupplement_Ref, 0x00_1dc0, 0x00_1dff);
+
+        private static UnicodeRangeExtended? CombiningDiacriticalMarksSupplement_Ref;
+
+        public static UnicodeRangeExtended LatinExtendedAdditional =>
+            LatinExtendedAdditional_Ref ?? CreateRange(ref LatinExtendedAdditional_Ref, 0x00_1e00, 0x00_1eff);
+
+        private static UnicodeRangeExtended? LatinExtendedAdditional_Ref;
+
+        public static UnicodeRangeExtended GreekExtended =>
+            GreekExtended_Ref ?? CreateRange(ref GreekExtended_Ref, 0x00_1f00, 0x00_1fff);
+
+        private static UnicodeRangeExtended? GreekExtended_Ref;
+
+        public static UnicodeRangeExtended GeneralPunctuation =>
+            GeneralPunctuation_Ref ?? CreateRange(ref GeneralPunctuation_Ref, 0x00_2000, 0x00_206f);
+
+        private static UnicodeRangeExtended? GeneralPunctuation_Ref;
+
+        public static UnicodeRangeExtended SuperscriptsAndSubscripts =>
+            SuperscriptsAndSubscripts_Ref ?? CreateRange(ref SuperscriptsAndSubscripts_Ref, 0x00_2070, 0x00_209f);
+
+        private static UnicodeRangeExtended? SuperscriptsAndSubscripts_Ref;
+
+        public static UnicodeRangeExtended CurrencySymbols =>
+            CurrencySymbols_Ref ?? CreateRange(ref CurrencySymbols_Ref, 0x00_20a0, 0x00_20cf);
+
+        private static UnicodeRangeExtended? CurrencySymbols_Ref;
+
+        public static UnicodeRangeExtended CombiningDiacriticalMarksForSymbols =>
+            CombiningDiacriticalMarksForSymbols_Ref ?? CreateRange(ref CombiningDiacriticalMarksForSymbols_Ref, 0x00_20d0, 0x00_20ff);
+
+        private static UnicodeRangeExtended? CombiningDiacriticalMarksForSymbols_Ref;
+
+        public static UnicodeRangeExtended LetterlikeSymbols =>
+            LetterlikeSymbols_Ref ?? CreateRange(ref LetterlikeSymbols_Ref, 0x00_2100, 0x00_214f);
+
+        private static UnicodeRangeExtended? LetterlikeSymbols_Ref;
+
+        public static UnicodeRangeExtended NumberForms =>
+            NumberForms_Ref ?? CreateRange(ref NumberForms_Ref, 0x00_2150, 0x00_218f);
+
+        private static UnicodeRangeExtended? NumberForms_Ref;
+
+        public static UnicodeRangeExtended Arrows =>
+            Arrows_Ref ?? CreateRange(ref Arrows_Ref, 0x00_2190, 0x00_21ff);
+
+        private static UnicodeRangeExtended? Arrows_Ref;
+
+        public static UnicodeRangeExtended MathematicalOperators =>
+            MathematicalOperators_Ref ?? CreateRange(ref MathematicalOperators_Ref, 0x00_2200, 0x00_22ff);
+
+        private static UnicodeRangeExtended? MathematicalOperators_Ref;
+
+        public static UnicodeRangeExtended MiscellaneousTechnical =>
+            MiscellaneousTechnical_Ref ?? CreateRange(ref MiscellaneousTechnical_Ref, 0x00_2300, 0x00_23ff);
+
+        private static UnicodeRangeExtended? MiscellaneousTechnical_Ref;
+
+        public static UnicodeRangeExtended ControlPictures =>
+            ControlPictures_Ref ?? CreateRange(ref ControlPictures_Ref, 0x00_2400, 0x00_243f);
+
+        private static UnicodeRangeExtended? ControlPictures_Ref;
+
+        public static UnicodeRangeExtended OpticalCharacterRecognition =>
+            OpticalCharacterRecognition_Ref ?? CreateRange(ref OpticalCharacterRecognition_Ref, 0x00_2440, 0x00_245f);
+
+        private static UnicodeRangeExtended? OpticalCharacterRecognition_Ref;
+
+        public static UnicodeRangeExtended EnclosedAlphanumerics =>
+            EnclosedAlphanumerics_Ref ?? CreateRange(ref EnclosedAlphanumerics_Ref, 0x00_2460, 0x00_24ff);
+
+        private static UnicodeRangeExtended? EnclosedAlphanumerics_Ref;
+
+        public static UnicodeRangeExtended BoxDrawing =>
+            BoxDrawing_Ref ?? CreateRange(ref BoxDrawing_Ref, 0x00_2500, 0x00_257f);
+
+        private static UnicodeRangeExtended? BoxDrawing_Ref;
+
+        public static UnicodeRangeExtended BlockElements =>
+            BlockElements_Ref ?? CreateRange(ref BlockElements_Ref, 0x00_2580, 0x00_259f);
+
+        private static UnicodeRangeExtended? BlockElements_Ref;
+
+        public static UnicodeRangeExtended GeometricShapes =>
+            GeometricShapes_Ref ?? CreateRange(ref GeometricShapes_Ref, 0x00_25a0, 0x00_25ff);
+
+        private static UnicodeRangeExtended? GeometricShapes_Ref;
+
+        public static UnicodeRangeExtended MiscellaneousSymbols =>
+            MiscellaneousSymbols_Ref ?? CreateRange(ref MiscellaneousSymbols_Ref, 0x00_2600, 0x00_26ff);
+
+        private static UnicodeRangeExtended? MiscellaneousSymbols_Ref;
+
+        public static UnicodeRangeExtended Dingbats =>
+            Dingbats_Ref ?? CreateRange(ref Dingbats_Ref, 0x00_2700, 0x00_27bf);
+
+        private static UnicodeRangeExtended? Dingbats_Ref;
+
+        public static UnicodeRangeExtended MiscellaneousMathematicalSymbols_a =>
+            MiscellaneousMathematicalSymbols_a_Ref ?? CreateRange(ref MiscellaneousMathematicalSymbols_a_Ref, 0x00_27c0, 0x00_27ef);
+
+        private static UnicodeRangeExtended? MiscellaneousMathematicalSymbols_a_Ref;
+
+        public static UnicodeRangeExtended SupplementalArrows_a =>
+            SupplementalArrows_a_Ref ?? CreateRange(ref SupplementalArrows_a_Ref, 0x00_27f0, 0x00_27ff);
+
+        private static UnicodeRangeExtended? SupplementalArrows_a_Ref;
+
+        public static UnicodeRangeExtended BraillePatterns =>
+            BraillePatterns_Ref ?? CreateRange(ref BraillePatterns_Ref, 0x00_2800, 0x00_28ff);
+
+        private static UnicodeRangeExtended? BraillePatterns_Ref;
+
+        public static UnicodeRangeExtended SupplementalArrows_b =>
+            SupplementalArrows_b_Ref ?? CreateRange(ref SupplementalArrows_b_Ref, 0x00_2900, 0x00_297f);
+
+        private static UnicodeRangeExtended? SupplementalArrows_b_Ref;
+
+        public static UnicodeRangeExtended MiscellaneousMathematicalSymbols_b =>
+            MiscellaneousMathematicalSymbols_b_Ref ?? CreateRange(ref MiscellaneousMathematicalSymbols_b_Ref, 0x00_2980, 0x00_29ff);
+
+        private static UnicodeRangeExtended? MiscellaneousMathematicalSymbols_b_Ref;
+
+        public static UnicodeRangeExtended SupplementalMathematicalOperators =>
+            SupplementalMathematicalOperators_Ref ?? CreateRange(ref SupplementalMathematicalOperators_Ref, 0x00_2a00, 0x00_2aff);
+
+        private static UnicodeRangeExtended? SupplementalMathematicalOperators_Ref;
+
+        public static UnicodeRangeExtended MiscellaneousSymbolsAndArrows =>
+            MiscellaneousSymbolsAndArrows_Ref ?? CreateRange(ref MiscellaneousSymbolsAndArrows_Ref, 0x00_2b00, 0x00_2bff);
+
+        private static UnicodeRangeExtended? MiscellaneousSymbolsAndArrows_Ref;
+
+        public static UnicodeRangeExtended Glagolitic =>
+            Glagolitic_Ref ?? CreateRange(ref Glagolitic_Ref, 0x00_2c00, 0x00_2c5f);
+
+        private static UnicodeRangeExtended? Glagolitic_Ref;
+
+        public static UnicodeRangeExtended LatinExtended_c =>
+            LatinExtended_c_Ref ?? CreateRange(ref LatinExtended_c_Ref, 0x00_2c60, 0x00_2c7f);
+
+        private static UnicodeRangeExtended? LatinExtended_c_Ref;
+
+        public static UnicodeRangeExtended Coptic =>
+            Coptic_Ref ?? CreateRange(ref Coptic_Ref, 0x00_2c80, 0x00_2cff);
+
+        private static UnicodeRangeExtended? Coptic_Ref;
+
+        public static UnicodeRangeExtended GeorgianSupplement =>
+            GeorgianSupplement_Ref ?? CreateRange(ref GeorgianSupplement_Ref, 0x00_2d00, 0x00_2d2f);
+
+        private static UnicodeRangeExtended? GeorgianSupplement_Ref;
+
+        public static UnicodeRangeExtended Tifinagh =>
+            Tifinagh_Ref ?? CreateRange(ref Tifinagh_Ref, 0x00_2d30, 0x00_2d7f);
+
+        private static UnicodeRangeExtended? Tifinagh_Ref;
+
+        public static UnicodeRangeExtended EthiopicExtended =>
+            EthiopicExtended_Ref ?? CreateRange(ref EthiopicExtended_Ref, 0x00_2d80, 0x00_2ddf);
+
+        private static UnicodeRangeExtended? EthiopicExtended_Ref;
+
+        public static UnicodeRangeExtended CyrillicExtended_a =>
+            CyrillicExtended_a_Ref ?? CreateRange(ref CyrillicExtended_a_Ref, 0x00_2de0, 0x00_2dff);
+
+        private static UnicodeRangeExtended? CyrillicExtended_a_Ref;
+
+        public static UnicodeRangeExtended SupplementalPunctuation =>
+            SupplementalPunctuation_Ref ?? CreateRange(ref SupplementalPunctuation_Ref, 0x00_2e00, 0x00_2e7f);
+
+        private static UnicodeRangeExtended? SupplementalPunctuation_Ref;
+
+        public static UnicodeRangeExtended CjkRadicalsSupplement =>
+            CjkRadicalsSupplement_Ref ?? CreateRange(ref CjkRadicalsSupplement_Ref, 0x00_2e80, 0x00_2eff);
+
+        private static UnicodeRangeExtended? CjkRadicalsSupplement_Ref;
+
+        public static UnicodeRangeExtended KangxiRadicals =>
+            KangxiRadicals_Ref ?? CreateRange(ref KangxiRadicals_Ref, 0x00_2f00, 0x00_2fdf);
+
+        private static UnicodeRangeExtended? KangxiRadicals_Ref;
+
+        public static UnicodeRangeExtended IdeographicDescriptionCharacters =>
+            IdeographicDescriptionCharacters_Ref ?? CreateRange(ref IdeographicDescriptionCharacters_Ref, 0x00_2ff0, 0x00_2fff);
+
+        private static UnicodeRangeExtended? IdeographicDescriptionCharacters_Ref;
+
+        public static UnicodeRangeExtended CjkSymbolsAndPunctuation =>
+            CjkSymbolsAndPunctuation_Ref ?? CreateRange(ref CjkSymbolsAndPunctuation_Ref, 0x00_3000, 0x00_303f);
+
+        private static UnicodeRangeExtended? CjkSymbolsAndPunctuation_Ref;
+
+        public static UnicodeRangeExtended Hiragana =>
+            Hiragana_Ref ?? CreateRange(ref Hiragana_Ref, 0x00_3040, 0x00_309f);
+
+        private static UnicodeRangeExtended? Hiragana_Ref;
+
+        public static UnicodeRangeExtended Katakana =>
+            Katakana_Ref ?? CreateRange(ref Katakana_Ref, 0x00_30a0, 0x00_30ff);
+
+        private static UnicodeRangeExtended? Katakana_Ref;
+
+        public static UnicodeRangeExtended Bopomofo =>
+            Bopomofo_Ref ?? CreateRange(ref Bopomofo_Ref, 0x00_3100, 0x00_312f);
+
+        private static UnicodeRangeExtended? Bopomofo_Ref;
+
+        public static UnicodeRangeExtended HangulCompatibilityJamo =>
+            HangulCompatibilityJamo_Ref ?? CreateRange(ref HangulCompatibilityJamo_Ref, 0x00_3130, 0x00_318f);
+
+        private static UnicodeRangeExtended? HangulCompatibilityJamo_Ref;
+
+        public static UnicodeRangeExtended Kanbun =>
+            Kanbun_Ref ?? CreateRange(ref Kanbun_Ref, 0x00_3190, 0x00_319f);
+
+        private static UnicodeRangeExtended? Kanbun_Ref;
+
+        public static UnicodeRangeExtended BopomofoExtended =>
+            BopomofoExtended_Ref ?? CreateRange(ref BopomofoExtended_Ref, 0x00_31a0, 0x00_31bf);
+
+        private static UnicodeRangeExtended? BopomofoExtended_Ref;
+
+        public static UnicodeRangeExtended CjkStrokes =>
+            CjkStrokes_Ref ?? CreateRange(ref CjkStrokes_Ref, 0x00_31c0, 0x00_31ef);
+
+        private static UnicodeRangeExtended? CjkStrokes_Ref;
+
+        public static UnicodeRangeExtended KatakanaPhoneticExtensions =>
+            KatakanaPhoneticExtensions_Ref ?? CreateRange(ref KatakanaPhoneticExtensions_Ref, 0x00_31f0, 0x00_31ff);
+
+        private static UnicodeRangeExtended? KatakanaPhoneticExtensions_Ref;
+
+        public static UnicodeRangeExtended EnclosedCjkLettersAndMonths =>
+            EnclosedCjkLettersAndMonths_Ref ?? CreateRange(ref EnclosedCjkLettersAndMonths_Ref, 0x00_3200, 0x00_32ff);
+
+        private static UnicodeRangeExtended? EnclosedCjkLettersAndMonths_Ref;
+
+        public static UnicodeRangeExtended CjkCompatibility =>
+            CjkCompatibility_Ref ?? CreateRange(ref CjkCompatibility_Ref, 0x00_3300, 0x00_33ff);
+
+        private static UnicodeRangeExtended? CjkCompatibility_Ref;
+
+        public static UnicodeRangeExtended CjkUnifiedIdeographsExtensionA =>
+            CjkUnifiedIdeographsExtensionA_Ref ?? CreateRange(ref CjkUnifiedIdeographsExtensionA_Ref, 0x00_3400, 0x00_4dbf);
+
+        private static UnicodeRangeExtended? CjkUnifiedIdeographsExtensionA_Ref;
+
+        public static UnicodeRangeExtended YijingHexagramSymbols =>
+            YijingHexagramSymbols_Ref ?? CreateRange(ref YijingHexagramSymbols_Ref, 0x00_4dc0, 0x00_4dff);
+
+        private static UnicodeRangeExtended? YijingHexagramSymbols_Ref;
+
+        public static UnicodeRangeExtended CjkUnifiedIdeographs =>
+            CjkUnifiedIdeographs_Ref ?? CreateRange(ref CjkUnifiedIdeographs_Ref, 0x00_4e00, 0x00_9fff);
+
+        private static UnicodeRangeExtended? CjkUnifiedIdeographs_Ref;
+
+        public static UnicodeRangeExtended YiSyllables =>
+            YiSyllables_Ref ?? CreateRange(ref YiSyllables_Ref, 0x00_a000, 0x00_a48f);
+
+        private static UnicodeRangeExtended? YiSyllables_Ref;
+
+        public static UnicodeRangeExtended YiRadicals =>
+            YiRadicals_Ref ?? CreateRange(ref YiRadicals_Ref, 0x00_a490, 0x00_a4cf);
+
+        private static UnicodeRangeExtended? YiRadicals_Ref;
+
+        public static UnicodeRangeExtended Lisu =>
+            Lisu_Ref ?? CreateRange(ref Lisu_Ref, 0x00_a4d0, 0x00_a4ff);
+
+        private static UnicodeRangeExtended? Lisu_Ref;
+
+        public static UnicodeRangeExtended Vai =>
+            Vai_Ref ?? CreateRange(ref Vai_Ref, 0x00_a500, 0x00_a63f);
+
+        private static UnicodeRangeExtended? Vai_Ref;
+
+        public static UnicodeRangeExtended CyrillicExtended_b =>
+            CyrillicExtended_b_Ref ?? CreateRange(ref CyrillicExtended_b_Ref, 0x00_a640, 0x00_a69f);
+
+        private static UnicodeRangeExtended? CyrillicExtended_b_Ref;
+
+        public static UnicodeRangeExtended Bamum =>
+            Bamum_Ref ?? CreateRange(ref Bamum_Ref, 0x00_a6a0, 0x00_a6ff);
+
+        private static UnicodeRangeExtended? Bamum_Ref;
+
+        public static UnicodeRangeExtended ModifierToneLetters =>
+            ModifierToneLetters_Ref ?? CreateRange(ref ModifierToneLetters_Ref, 0x00_a700, 0x00_a71f);
+
+        private static UnicodeRangeExtended? ModifierToneLetters_Ref;
+
+        public static UnicodeRangeExtended LatinExtended_d =>
+            LatinExtended_d_Ref ?? CreateRange(ref LatinExtended_d_Ref, 0x00_a720, 0x00_a7ff);
+
+        private static UnicodeRangeExtended? LatinExtended_d_Ref;
+
+        public static UnicodeRangeExtended SylotiNagri =>
+            SylotiNagri_Ref ?? CreateRange(ref SylotiNagri_Ref, 0x00_a800, 0x00_a82f);
+
+        private static UnicodeRangeExtended? SylotiNagri_Ref;
+
+        public static UnicodeRangeExtended CommonIndicNumberForms =>
+            CommonIndicNumberForms_Ref ?? CreateRange(ref CommonIndicNumberForms_Ref, 0x00_a830, 0x00_a83f);
+
+        private static UnicodeRangeExtended? CommonIndicNumberForms_Ref;
+
+        public static UnicodeRangeExtended Phags_pa =>
+            Phags_pa_Ref ?? CreateRange(ref Phags_pa_Ref, 0x00_a840, 0x00_a87f);
+
+        private static UnicodeRangeExtended? Phags_pa_Ref;
+
+        public static UnicodeRangeExtended Saurashtra =>
+            Saurashtra_Ref ?? CreateRange(ref Saurashtra_Ref, 0x00_a880, 0x00_a8df);
+
+        private static UnicodeRangeExtended? Saurashtra_Ref;
+
+        public static UnicodeRangeExtended DevanagariExtended =>
+            DevanagariExtended_Ref ?? CreateRange(ref DevanagariExtended_Ref, 0x00_a8e0, 0x00_a8ff);
+
+        private static UnicodeRangeExtended? DevanagariExtended_Ref;
+
+        public static UnicodeRangeExtended KayahLi =>
+            KayahLi_Ref ?? CreateRange(ref KayahLi_Ref, 0x00_a900, 0x00_a92f);
+
+        private static UnicodeRangeExtended? KayahLi_Ref;
+
+        public static UnicodeRangeExtended Rejang =>
+            Rejang_Ref ?? CreateRange(ref Rejang_Ref, 0x00_a930, 0x00_a95f);
+
+        private static UnicodeRangeExtended? Rejang_Ref;
+
+        public static UnicodeRangeExtended HangulJamoExtended_a =>
+            HangulJamoExtended_a_Ref ?? CreateRange(ref HangulJamoExtended_a_Ref, 0x00_a960, 0x00_a97f);
+
+        private static UnicodeRangeExtended? HangulJamoExtended_a_Ref;
+
+        public static UnicodeRangeExtended Javanese =>
+            Javanese_Ref ?? CreateRange(ref Javanese_Ref, 0x00_a980, 0x00_a9df);
+
+        private static UnicodeRangeExtended? Javanese_Ref;
+
+        public static UnicodeRangeExtended MyanmarExtended_b =>
+            MyanmarExtended_b_Ref ?? CreateRange(ref MyanmarExtended_b_Ref, 0x00_a9e0, 0x00_a9ff);
+
+        private static UnicodeRangeExtended? MyanmarExtended_b_Ref;
+
+        public static UnicodeRangeExtended Cham =>
+            Cham_Ref ?? CreateRange(ref Cham_Ref, 0x00_aa00, 0x00_aa5f);
+
+        private static UnicodeRangeExtended? Cham_Ref;
+
+        public static UnicodeRangeExtended MyanmarExtended_a =>
+            MyanmarExtended_a_Ref ?? CreateRange(ref MyanmarExtended_a_Ref, 0x00_aa60, 0x00_aa7f);
+
+        private static UnicodeRangeExtended? MyanmarExtended_a_Ref;
+
+        public static UnicodeRangeExtended TaiViet =>
+            TaiViet_Ref ?? CreateRange(ref TaiViet_Ref, 0x00_aa80, 0x00_aadf);
+
+        private static UnicodeRangeExtended? TaiViet_Ref;
+
+        public static UnicodeRangeExtended MeeteiMayekExtensions =>
+            MeeteiMayekExtensions_Ref ?? CreateRange(ref MeeteiMayekExtensions_Ref, 0x00_aae0, 0x00_aaff);
+
+        private static UnicodeRangeExtended? MeeteiMayekExtensions_Ref;
+
+        public static UnicodeRangeExtended EthiopicExtended_a =>
+            EthiopicExtended_a_Ref ?? CreateRange(ref EthiopicExtended_a_Ref, 0x00_ab00, 0x00_ab2f);
+
+        private static UnicodeRangeExtended? EthiopicExtended_a_Ref;
+
+        public static UnicodeRangeExtended LatinExtended_e =>
+            LatinExtended_e_Ref ?? CreateRange(ref LatinExtended_e_Ref, 0x00_ab30, 0x00_ab6f);
+
+        private static UnicodeRangeExtended? LatinExtended_e_Ref;
+
+        public static UnicodeRangeExtended CherokeeSupplement =>
+            CherokeeSupplement_Ref ?? CreateRange(ref CherokeeSupplement_Ref, 0x00_ab70, 0x00_abbf);
+
+        private static UnicodeRangeExtended? CherokeeSupplement_Ref;
+
+        public static UnicodeRangeExtended MeeteiMayek =>
+            MeeteiMayek_Ref ?? CreateRange(ref MeeteiMayek_Ref, 0x00_abc0, 0x00_abff);
+
+        private static UnicodeRangeExtended? MeeteiMayek_Ref;
+
+        public static UnicodeRangeExtended HangulSyllables =>
+            HangulSyllables_Ref ?? CreateRange(ref HangulSyllables_Ref, 0x00_ac00, 0x00_d7af);
+
+        private static UnicodeRangeExtended? HangulSyllables_Ref;
+
+        public static UnicodeRangeExtended HangulJamoExtended_b =>
+            HangulJamoExtended_b_Ref ?? CreateRange(ref HangulJamoExtended_b_Ref, 0x00_d7b0, 0x00_d7ff);
+
+        private static UnicodeRangeExtended? HangulJamoExtended_b_Ref;
+
+        public static UnicodeRangeExtended HighSurrogates =>
+            HighSurrogates_Ref ?? CreateRange(ref HighSurrogates_Ref, 0x00_d800, 0x00_db7f);
+
+        private static UnicodeRangeExtended? HighSurrogates_Ref;
+
+        public static UnicodeRangeExtended HighPrivateUseSurrogates =>
+            HighPrivateUseSurrogates_Ref ?? CreateRange(ref HighPrivateUseSurrogates_Ref, 0x00_db80, 0x00_dbff);
+
+        private static UnicodeRangeExtended? HighPrivateUseSurrogates_Ref;
+
+        public static UnicodeRangeExtended LowSurrogates =>
+            LowSurrogates_Ref ?? CreateRange(ref LowSurrogates_Ref, 0x00_dc00, 0x00_dfff);
+
+        private static UnicodeRangeExtended? LowSurrogates_Ref;
+
+        public static UnicodeRangeExtended PrivateUseArea =>
+            PrivateUseArea_Ref ?? CreateRange(ref PrivateUseArea_Ref, 0x00_e000, 0x00_f8ff);
+
+        private static UnicodeRangeExtended? PrivateUseArea_Ref;
+
+        public static UnicodeRangeExtended CjkCompatibilityIdeographs =>
+            CjkCompatibilityIdeographs_Ref ?? CreateRange(ref CjkCompatibilityIdeographs_Ref, 0x00_f900, 0x00_faff);
+
+        private static UnicodeRangeExtended? CjkCompatibilityIdeographs_Ref;
+
+        public static UnicodeRangeExtended AlphabeticPresentationForms =>
+            AlphabeticPresentationForms_Ref ?? CreateRange(ref AlphabeticPresentationForms_Ref, 0x00_fb00, 0x00_fb4f);
+
+        private static UnicodeRangeExtended? AlphabeticPresentationForms_Ref;
+
+        public static UnicodeRangeExtended ArabicPresentationForms_a =>
+            ArabicPresentationForms_a_Ref ?? CreateRange(ref ArabicPresentationForms_a_Ref, 0x00_fb50, 0x00_fdff);
+
+        private static UnicodeRangeExtended? ArabicPresentationForms_a_Ref;
+
+        public static UnicodeRangeExtended VariationSelectors =>
+            VariationSelectors_Ref ?? CreateRange(ref VariationSelectors_Ref, 0x00_fe00, 0x00_fe0f);
+
+        private static UnicodeRangeExtended? VariationSelectors_Ref;
+
+        public static UnicodeRangeExtended VerticalForms =>
+            VerticalForms_Ref ?? CreateRange(ref VerticalForms_Ref, 0x00_fe10, 0x00_fe1f);
+
+        private static UnicodeRangeExtended? VerticalForms_Ref;
+
+        public static UnicodeRangeExtended CombiningHalfMarks =>
+            CombiningHalfMarks_Ref ?? CreateRange(ref CombiningHalfMarks_Ref, 0x00_fe20, 0x00_fe2f);
+
+        private static UnicodeRangeExtended? CombiningHalfMarks_Ref;
+
+        public static UnicodeRangeExtended CjkCompatibilityForms =>
+            CjkCompatibilityForms_Ref ?? CreateRange(ref CjkCompatibilityForms_Ref, 0x00_fe30, 0x00_fe4f);
+
+        private static UnicodeRangeExtended? CjkCompatibilityForms_Ref;
+
+        public static UnicodeRangeExtended SmallFormVariants =>
+            SmallFormVariants_Ref ?? CreateRange(ref SmallFormVariants_Ref, 0x00_fe50, 0x00_fe6f);
+
+        private static UnicodeRangeExtended? SmallFormVariants_Ref;
+
+        public static UnicodeRangeExtended ArabicPresentationForms_b =>
+            ArabicPresentationForms_b_Ref ?? CreateRange(ref ArabicPresentationForms_b_Ref, 0x00_fe70, 0x00_feff);
+
+        private static UnicodeRangeExtended? ArabicPresentationForms_b_Ref;
+
+        public static UnicodeRangeExtended HalfwidthAndFullwidthForms =>
+            HalfwidthAndFullwidthForms_Ref ?? CreateRange(ref HalfwidthAndFullwidthForms_Ref, 0x00_ff00, 0x00_ffef);
+
+        private static UnicodeRangeExtended? HalfwidthAndFullwidthForms_Ref;
+
+        public static UnicodeRangeExtended Specials =>
+            Specials_Ref ?? CreateRange(ref Specials_Ref, 0x00_fff0, 0x00_ffff);
+
+        private static UnicodeRangeExtended? Specials_Ref;
+
+        #endregion
+
+        #region Supplementary Multilingual Plane
+
         public static UnicodeRangeExtended LinearBSyllabary =>
             LinearBSyllabary_Ref ?? CreateRange(ref LinearBSyllabary_Ref, 0x01_0000, 0x01_007f);
 
@@ -672,6 +1493,10 @@ namespace UnicodeSMP
 
         private static UnicodeRangeExtended? SymbolsForLegacyComputing_Ref;
 
+        #endregion
+
+        #region Supplementary Ideographic Plane
+
         public static UnicodeRangeExtended CjkUnifiedIdeographsExtensionB =>
             CjkUnifiedIdeographsExtensionB_Ref ?? CreateRange(ref CjkUnifiedIdeographsExtensionB_Ref, 0x02_0000, 0x02_a6df);
 
@@ -702,10 +1527,18 @@ namespace UnicodeSMP
 
         private static UnicodeRangeExtended? CjkCompatibilityIdeographsSupplement_Ref;
 
+        #endregion
+
+        #region Tertiary Ideographic Plane
+
         public static UnicodeRangeExtended CjkUnifiedIdeographsExtensionG =>
             CjkUnifiedIdeographsExtensionG_Ref ?? CreateRange(ref CjkUnifiedIdeographsExtensionG_Ref, 0x03_0000, 0x03_134f);
 
         private static UnicodeRangeExtended? CjkUnifiedIdeographsExtensionG_Ref;
+
+        #endregion
+
+        #region Supplementary Special-purpose Plane
 
         public static UnicodeRangeExtended Tags =>
             Tags_Ref ?? CreateRange(ref Tags_Ref, 0x0e_0000, 0x0e_007f);
@@ -716,5 +1549,7 @@ namespace UnicodeSMP
             VariationSelectorsSupplement_Ref ?? CreateRange(ref VariationSelectorsSupplement_Ref, 0x0e_0100, 0x0e_01ef);
 
         private static UnicodeRangeExtended? VariationSelectorsSupplement_Ref;
-   }
+
+        #endregion
+    }
 }
