@@ -36,16 +36,20 @@ namespace RangeGenerator
                         })
                         .Aggregate((a, b) => a + b);
                     var firstIndex = int.Parse(m.Groups[2].Value, NumberStyles.HexNumber);
+                    var firstIndexS = firstIndex.ToString("x6");
                     var lastIndex = int.Parse(m.Groups[3].Value, NumberStyles.HexNumber);
+                    var lastIndexS = lastIndex.ToString("x6");
 
                     return string.Format(
                         "        public static UnicodeRangeExtended {0} =>\n" +
-                        "            {0}_Ref ?? CreateRange(ref {0}_Ref, 0x{1:x6}, 0x{2:x6});\n" +
+                        "            {0}_Ref ?? CreateRange(ref {0}_Ref, 0x{1}_{2}, 0x{3}_{4});\n" +
                         "\n" +
                         "        private static UnicodeRangeExtended? {0}_Ref;",
                         name,
-                        firstIndex,
-                        lastIndex
+                        firstIndexS.Substring(0, 2),
+                        firstIndexS.Substring(2),
+                        lastIndexS.Substring(0, 2),
+                        lastIndexS.Substring(2)
                     );
                 })
                 .Where(x => x != null)
